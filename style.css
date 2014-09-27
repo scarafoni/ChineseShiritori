@@ -30,11 +30,12 @@ body {
   background-color: #000;
   font-family:"Helvetica";
   text-transform:uppercase;
-  background: url(images/border6.png) no-repeat center center fixed; 
+  background: url(images/border6.png) no-repeat scroll center top transparent;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 }
@@ -42,11 +43,24 @@ body {
   color: #000;
   text-align: center;
   background-color:#E6E6E6;
+  position:relative;
 
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 
+.site-wrapper {
+  display: table;
+  margin-left:auto;
+    margin-right:auto;
+    width:960px;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -66,8 +80,8 @@ body {
   margin-bottom: 10px;
   font-size:50px;
   font-family: Custom Font, bold;
-  min-width:200px;
-
+  position:center;
+  color:black;
 }
 
 
@@ -99,7 +113,7 @@ body {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   .masthead-brand {
     float: left;
   }
@@ -126,13 +140,16 @@ body {
     width: auto;
     height: 360px;
     vertical-align: middle;
-    border: 5px solid #000;
+    background-color:#073074;
+    opacity:.7;
+    border: 3px solid #000;
+
 }
 .box span {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    color: white
+    
 }
 
 #submit_text {
@@ -142,14 +159,15 @@ body {
 
 #inner {
     width: 50%;
-    margin: 0 auto;
+    margin: auto auto;
 }
 
 #view_text{
-  min-width: 700px;
+  min-width: 500px;
   color: #000000;
   text-align: left;
   word-wrap: break-word;
+  color:white;
 }
 
 
@@ -162,11 +180,17 @@ body {
 /*
  * Affix and center
  */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
 
-@media (min-width: 768px) {
+}
+@media (min-width: 500px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    width: 700px;
     top: 0;
   }
  
@@ -186,7 +210,6 @@ body {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-
 }
 
 @media (min-width: 992px) {
@@ -201,6 +224,7 @@ body {
     font-family: 'Custom Font'; /*a name to be used later*/
     src: url('fonts/Colors Of Autumn.ttf'); /*URL to font*/
 }
+
 @-webkit-frames{
 
 }

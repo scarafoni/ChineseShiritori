@@ -4,53 +4,49 @@
     <title>Shiritori Game</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name"author" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://togetherjs.com/togetherjs-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/assets/js/docs.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
-    <script type="text/javascript" src="/js/jsParser.js"></script>
     <script type="text/javascript">pico.load("parser");</script>
-
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/theme/theme.css" rel="stylesheet">
-    <link href="/css/signin.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
 </head>
 
 <body>
-	<p id="message"></p>
-	<div class="cover-container">
-	    <div class="masthead clearfix">
-	        <div class="inner">
-	            <div>
-	                <h1 class="masthead-brand">Shiritori</h1>
-	            </div>
-	            <div class="box">
-	                <div id="submit_text">
-	                    <span><div id="view_text"></div></span>
-	                </div>
-	            </div>
-	            <!-- Text area -->
-	            <input type="email" class="form-control" placeholder="Enter your word" required="" autofocus="" id="my_text">
-	            <br />
+    <p id="message"></p>
+    <div class="cover-container">
+        <div class="masthead clearfix">
+            <div class="inner">
+                <div>
+                    <h1 class="masthead-brand">Shiritori</h1>
+                </div>
+                <div class="box">
+                    <div id="submit_text">
+                        <span><div id="view_text"></div></span>
+                    </div>
+                </div>
+                <!-- Text area -->
+                <input type="email" class="form-control" placeholder="Enter your word" required="" autofocus="" id="my_text">
+                <br>
 
-
-
-	            <!-- Submit Button -->
-	            <input id="submitText" a class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()" /><br>
+                <!-- Submit Button -->
+                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()">
+                <br>
                 <input id="submitText" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button>
-	        </div>
-	    </div>
-	</div>
+            </div>
+        </div>
+    </div>
 
 <script type="text/javascript">
 $("#submitText").click(viewText);
@@ -69,9 +65,5 @@ function viewText () {
 TogetherJS.config("cloneClicks", "#submitText");
 </script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
