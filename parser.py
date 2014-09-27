@@ -40,8 +40,6 @@ list and false if it is not
 Preconditions: l is a list"""
 def contains(l, word):
     for ele in l:
-        print "ele is "+ele
-        print "word is "+word
         if (ele == word):
             return True
     return False
