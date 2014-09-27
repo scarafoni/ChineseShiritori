@@ -16,35 +16,35 @@
     <script type="text/javascript" src="/pico/client.js"></script>
     <script type="text/javascript">pico.load("parser");</script>
     <link href="style.css" rel="stylesheet">
+    <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/theme/theme.css" rel="stylesheet">
 </head>
 
 <body>
 <p id="message"></p>
-<div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <div>
-                        <h1 class="masthead-brand">Shiritori</h1>
-                    </div>
-                    <div class="box">
-                        <div id="submit_text">
-                            <span><div id="view_text"></div></span>
-                        </div>
-                    </div>
-                    <!-- Text area -->
-                    <textarea class="text_edit" id="my_text"></textarea>
-                    <br />
+	<div class="cover-container">
+	    <div class="masthead clearfix">
+	        <div class="inner">
+	            <div>
+	                <h1 class="masthead-brand">Shiritori</h1>
+	            </div>
+	            <div class="box">
+	                <div id="submit_text">
+	                    <span><div id="view_text"></div></span>
+	                </div>
+	            </div>
+	            <!-- Text area -->
+	            <textarea class="text_edit" id="my_text"></textarea>
+	            <br />
 
-                    <!-- Submit Button -->
-                    <input id="submitText" type="button" value="Submit" onclick="view_text()" />
-                    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	            <!-- Submit Button -->
+	            <input id="submitText" a class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()" />
+	            <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+	        </div>
+	    </div>
+	</div>
 
 <script type="text/javascript">
 $("#submitText").click(viewText);
@@ -54,7 +54,7 @@ function viewText () {
     var div = $("#view_text");
     // Print the text in the div made for it.
     div.append(textArea);
-    $("#my_text").val(" ");
+    $("#my_text").val("");
     var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
            }

@@ -15,7 +15,7 @@ a:hover {
 .btn-default:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
+  background-color: #000;
   border: 1px solid #fff;
 }
 
@@ -27,12 +27,12 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
   font-family:"Helvetica";
   text-transform:uppercase;
 }
 body {
-  color: #000;
+  color: #fff;
   text-align: center;
   /*text-shadow: 0 1px 3px rgba(0,0,0,.5);
     box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
@@ -67,6 +67,8 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size:50px;
+  font-family: Colors Of Autumn;
 }
 
 .masthead-nav > li {
@@ -151,9 +153,10 @@ body {
 }
 
 #view_text{
-  width: 500px;
+  width: 700px;
   color: #000000;
   text-align: left;
+  word-wrap: break-word;
 }
 
 
@@ -191,6 +194,11 @@ body {
   .cover-container {
     width: 700px;
   }
+}
+
+@font-face {
+    font-family: 'Colors Of Autumn'; /*a name to be used later*/
+    src: url('fonts/Colors Of Autumn.ttf'); /*URL to font*/
 }
 @-webkit-frames{
 
