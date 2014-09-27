@@ -22,30 +22,21 @@ Precondition: word is a string"""
 def isSubject(word):
     lword = word.lower()
     subjects = [u'我',u'你'u'他']
-    return contains(subjects, lword)
+    return lword in subject
 
 """Returns whether word is a verb
 Precondition: word is a string"""
 def isVerb(word):
     lword = word.lower()
     verbs = [u'爱', u'恨']
-    return contains(verbs, lword)
+    return lword in verbs
 
 """Returns whether word is an object
 Precondition: word is a string"""
 def isObject(word):
     lword = word.lower()
     objects = [u'狗',u'猫']
-    return contains(objects, lword)
+    return lword in objects
 
-"""Takes in a list and an element and returns true if the element is in the
-list and false if it is not
-Preconditions: l is a list"""
-def contains(l, word):
-    for ele in l:
-        if (ele == word):
-            return True
-    return False
-    
 if __name__ == "__main__":
     main()
