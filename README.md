@@ -1,7 +1,7 @@
 ChineseShiritori
 ================
 
-chinese language practice tool fun Big Red Hacks 2014! http://csug.rochester.edu/u/dscarafo/shiritori/
+chinese language practice tool fun Big Red Hacks 2014! http://csug.rochester.edu/u/dscarafo/ChineseShiritori/
 
 
 Git 101 (for the new guys)
