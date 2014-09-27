@@ -15,7 +15,7 @@
     <script src="/assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
     <script type="text/javascript" src="/js/jsParser.js"></script>
-    <script type="text/javascript">pico.load("parser");</script>
+    <script type="text/javascript">pico.load("parser_cn");</script>
 
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@ function viewText () {
     var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
            }
-    parser.parse_text_res(textArea, displayMessage);
+    parser_cn.parse_text_res(textArea, displayMessage);
 }
 TogetherJS.config("cloneClicks", "#submitText");
 </script>
