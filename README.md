@@ -17,3 +17,4 @@ Git 101 (for the new guys)
         8. 'git commit -am "<message>"' save all changes in a commit, and <message> is a message telling what you changed
         9. 'git push' actually send all changes (commits) to the server
 
+        NOTE- these instructions are for unix/mac/linux, for windows there is an intuitive gui
