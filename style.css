@@ -177,6 +177,12 @@ body {
   width:800px;
   height:1020px;
 }
+
+p.pos_right{
+  position: fixed;
+    top: 45px;
+    right: 335px;
+}
 /*
  * Affix and center
  */
