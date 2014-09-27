@@ -30,26 +30,23 @@ body {
   background-color: #000;
   font-family:"Helvetica";
   text-transform:uppercase;
+  background: url(images/border6.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 }
 body {
-  color: #fff;
+  color: #000;
   text-align: center;
-  /*text-shadow: 0 1px 3px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
+  background-color:#E6E6E6;
 
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -68,8 +65,11 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size:50px;
-  font-family: Colors Of Autumn;
+  font-family: Custom Font, bold;
+  min-width:200px;
+
 }
+
 
 .masthead-nav > li {
   display: inline-block;
@@ -126,7 +126,7 @@ body {
     width: auto;
     height: 360px;
     vertical-align: middle;
-    border: 5px solid #4679BD;
+    border: 5px solid #000;
 }
 .box span {
     display: inline-block;
@@ -144,16 +144,9 @@ body {
     width: 50%;
     margin: 0 auto;
 }
-.text_edit {
-  width: 360px;
-  height: 50px;
-  resize:none;
-  margin-left: auto ;
-  margin-right: auto ;
-}
 
 #view_text{
-  width: 700px;
+  min-width: 700px;
   color: #000000;
   text-align: left;
   word-wrap: break-word;
@@ -184,10 +177,18 @@ body {
   /* Handle the widths */
   .masthead,
   .holder
-  .cover-container {
+  .cover-container { g
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+}
+
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
@@ -197,7 +198,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Colors Of Autumn'; /*a name to be used later*/
+    font-family: 'Custom Font'; /*a name to be used later*/
     src: url('fonts/Colors Of Autumn.ttf'); /*URL to font*/
 }
 @-webkit-frames{

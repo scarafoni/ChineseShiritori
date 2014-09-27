@@ -15,15 +15,16 @@
     <script src="../../assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
     <script type="text/javascript">pico.load("parser");</script>
-    <link href="style.css" rel="stylesheet">
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/theme/theme.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
 </head>
 
 <body>
-<p id="message"></p>
 	<div class="cover-container">
 	    <div class="masthead clearfix">
 	        <div class="inner">
@@ -36,11 +37,13 @@
 	                </div>
 	            </div>
 	            <!-- Text area -->
-	            <textarea class="text_edit" id="my_text"></textarea>
+	            <input type="email" class="form-control" placeholder="Enter your word" required="" autofocus="" id="my_text">
 	            <br />
 
+
+
 	            <!-- Submit Button -->
-	            <input id="submitText" a class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()" />
+	            <input id="submitText" a class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()" /><br>
 	            <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 	        </div>
 	    </div>
@@ -50,11 +53,11 @@
 $("#submitText").click(viewText);
 function viewText () {
     // Find html elements.
-    var textArea = $("#my_text").val();
+    var textArea = $("#my_text").val() + " ";
     var div = $("#view_text");
     // Print the text in the div made for it.
     div.append(textArea);
-    $("#my_text").val("");
+    $("#my_text").val(" ");
     var displayMessage = function(message){
                document.getElementById('message').innerHTML = message;
            }
