@@ -47,7 +47,7 @@
 
 	            <!-- Submit Button -->
 	            <input id="submitText" a class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()" /><br>
-	            <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+                <input id="submitText" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button>
 	        </div>
 	    </div>
 	</div>
@@ -68,5 +68,10 @@ function viewText () {
 }
 TogetherJS.config("cloneClicks", "#submitText");
 </script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
