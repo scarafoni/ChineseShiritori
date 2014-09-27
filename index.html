@@ -35,23 +35,24 @@
                     <br />
 
                     <!-- Submit Button -->
-                    <input type="button" value="Submit" onclick="view_text()" />
+                    <input id="submitText" type="button" value="Submit" onclick="view_text()" />
                     <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
-function view_text () {
+$("#submitText").click(viewText);
+function viewText () {
     // Find html elements.
-    var textArea = document.getElementById('my_text');
-    var div = document.getElementById('view_text');
-    // Put the text in a variable so we can manipulate it.
-    var text = textArea.value;
+    var textArea = $("#my_text").val();
+    var div = $("#view_text");
     // Print the text in the div made for it.
-    div.innerHTML = text;
+    div.html(textArea);
 }
+TogetherJS.config("cloneClicks", "#submitText");
 </script>
 </body>
 </html>
