@@ -44,6 +44,7 @@
 </div>
 
 <script type="text/javascript">
+<<<<<<< HEAD
 $("#submitText").click(viewText);
 function viewText () {
     // Find html elements.
@@ -51,6 +52,16 @@ function viewText () {
     var div = $("#view_text");
     // Print the text in the div made for it.
     div.html(textArea);
+=======
+function view_text () {
+	// Put the text in a variable so we can manipulate it.
+
+	mytext= $('#my_text').val();
+	$('#view_text').append(mytext);
+	
+	// Print the text in the div made for it.
+	$('#my_text').val("");
+>>>>>>> a0c200f7418644ee466cfdfac619de22bf13e7f7
 }
 TogetherJS.config("cloneClicks", "#submitText");
 </script>
