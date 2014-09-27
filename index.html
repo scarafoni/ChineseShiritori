@@ -50,7 +50,7 @@ function viewText () {
     var textArea = $("#my_text").val();
     var div = $("#view_text");
     // Print the text in the div made for it.
-    div.html(textArea);
+    div.append(textArea);
     $("#my_text").val("");
 }
 TogetherJS.config("cloneClicks", "#submitText");
