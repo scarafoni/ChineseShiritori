@@ -13,10 +13,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
+    <script type="text/javascript" src="/pico/client.js"></script>
+    <script type="text/javascript">pico.load("parser");</script>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
+<p id="message"></p>
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -51,7 +54,11 @@ function viewText () {
     var div = $("#view_text");
     // Print the text in the div made for it.
     div.append(textArea);
-    $("#my_text").val("");
+    $("#my_text").val(" ");
+    var displayMessage = function(message){
+               document.getElementById('message').innerHTML = message;
+           }
+    parser.parse_text_res(textArea, displayMessage);
 }
 TogetherJS.config("cloneClicks", "#submitText");
 </script>

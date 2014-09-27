@@ -1,5 +1,7 @@
-def main():
-    print parse("I love that")
+import pico
+
+def parse_text_res(sent):
+    return str(parse(sent))
 
 """Parses a sentence sent to determine whether it is a valid sentence
 Precondition: sent is a string"""
