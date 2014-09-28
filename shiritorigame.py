@@ -1,3 +1,4 @@
+import pico
 import nltk
 import rhine
 import goslate
@@ -69,6 +70,12 @@ class Shiritori(object):
                 self.p1score = self.p1score + (self.BASE_POINTS - node.relative_entropy)
             else:
                 self.p2score = self.p1score + (self.BASE_POINTS - node.relative_entropy)
+                
+    def get_p1score(self):
+        return self.p1score
+    
+    def get_p2score(self):
+        return self.p2score
 
 class Node(object):
     """Object of class node representing a word belonging to a sentence
@@ -80,3 +87,17 @@ class Node(object):
     def __init__(self, word, relative_entropy):
         self.word = word
         self.relative_entropy = relative_entropy
+
+game = Shiritori()
+
+def play(word):
+    game.play(word)
+    
+def noop():
+    return "noop"
+
+def get_p1score():
+   return game.get_p1score
+
+def get_p2score():
+   return game.get_p2score

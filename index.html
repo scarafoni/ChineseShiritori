@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Shiritori Game</title>
@@ -15,6 +15,7 @@
     <script src="../../assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
     <script type="text/javascript">pico.load("parser_cn");</script>
+    <script type="text/javascript">pico.load("shiritorigame");</script>
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -43,7 +44,7 @@
                 <br>
 
                 <!-- Submit Button -->
-                <input id="submitText" a="" class="btn btn-lg btn-primary" role="button" type="button" value="Submit">
+                <input id="submitText" a="" class="btn btn-lg btn-primary" role="button" type="button" value="Submit" onclick="viewText()">
 
                 <input id="resetText" a="" class="btn btn-lg btn-warning" role="button" type="button" value="Reset" onclick="resetText()">
                
@@ -73,23 +74,38 @@ $('#my_text').keydown(function (e){
 
 function viewText () {
     // Find html elements.
-    var textArea = $("#my_text").val();
+    var textA = $("#my_text");
+    var textArea = textA.val();
     var div = $("#view_text");
-   
-    counter1=0;
-    counter2=0;
-    $("#playerOne").text(counter1);
-    $("#playerTwo").text(counter2);
+
+    counter1 = 0;
+    counter2 = 0;
+    
+    shiritorigame.noop();
+    shiritorigame.play(textA.text());
+    shiritorigame.get_p1score(displayScore1);
+    shiritorigame.get_p2score(displayScore2);
+
+    var displayScore1 = function (s1) {
+        $("#playerOne").text(s1);
+    }
+
+    var displayScore2 = function (s2) {
+        $("#playerTwo").text(s2);
+    }
+
+    // $("#playerOne").text(counter1);
+    // $("#playerTwo").text(counter2);
     
     // Print the text in the div made for it.
     div.append(textArea);
     $("#my_text").val(" ");
     var displayMessage = function(message){
         //document.getElementById('message').innerHTML = message;
-        if(message == "False"){
-            $("#view_text").empty();
-            alert("game over");
-        }
+        // if(message == "False"){
+        //    $("#view_text").empty();
+        //    alert("game over");
+        //}
     }
     var sentence = [];
     parser_cn.parse_text_res(div.text(), displayMessage);
