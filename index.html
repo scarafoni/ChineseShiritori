@@ -30,26 +30,31 @@
             <div class="inner">
                 <div>
                     <h1 class="masthead-brand">Shiritori</h1>
-                    <p class="pos_right"><input id="startTJS" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button></p>
+                    <p align="right"><input id="startTJS" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button></p>
                 </div>
                 <div class="box">
+                    <h2 class="subhead">The Ultimate Chinese Learning Guide</h2>
                     <div id="submit_text">
                         <span><div id="view_text"></div></span>
                     </div>
                 </div>
                 <!-- Text area -->
-                <input type="email" class="form-control" placeholder="Enter your word" required="" autofocus="" id="my_text">
+                <input id="my_text" type="email" class="form-control" placeholder="Enter your word" required="" autofocus="">
                 <br>
 
                 <!-- Submit Button -->
-                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="viewText()">
+                <input id="submitText" a="" class="btn btn-lg btn-primary" role="button" type="button" value="Submit" onclick="viewText()">
+
+                <input id="resetText" a="" class="btn btn-lg btn-warning" role="button" type="button" value="Reset" onclick="resetText()">
+                
                 <br>
             </div>
         </div>
     </div>
 
 <script type="text/javascript">
-//$("#submitText").click(viewText);
+//starting state
+$("#submitText").click(viewText);
 
 $('#my_text').keydown(function (e){
     if(e.keyCode == 13){
@@ -72,6 +77,8 @@ function viewText () {
     }
     parser_cn.parse_text_res(textArea, displayMessage);
 }
+
+
 
 TogetherJS.config("cloneClicks", "#submitText");
 </script>
