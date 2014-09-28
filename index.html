@@ -72,7 +72,7 @@ function viewText () {
     var displayMessage = function(message){
         document.getElementById('message').innerHTML = message;
         if(message == "False"){
-            $("#view_text").val("");
+            $("#view_text").empty();
             alert("game over");
         }
     }
