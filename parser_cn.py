@@ -2,22 +2,36 @@
 
 import pico
     
+subjects = [u'我',u'你'u'他']
+verbs = [u'爱', u'恨']
+objects = [u'狗',u'猫']
+
+state = ""
+
 def parse_text_res(sent):
     return str(parse(sent))
+
+def read_start():
+    f = open("sentence_part.txt",'r')
+    x = f.readline().strip()
+    f.close()
+    return x
+    
+def update_start(text):
+    f = open("sentence_part.txt",'w')
+    f.write(text)
+    f.close()
 
 """Parses a sentence sent to determine whether it is a valid sentence
 Precondition: sent is a string"""
 def parse(sent):
-    f = open("sentence_part.txt",'r')
-    last_part = f.readline().strip()
-    f.close()
-    print(last_part)
-    sent = sent.strip()
-    if last_part in ["start","subject"]:
+    state = read_start()
+    print("state- ",state)
+    if state in ["start","subject"]:
         return isSubject(sent)
-    elif last_part == "verb":
+    elif state == "verb":
         return isVerb(sent)
-    elif last_part == "object":
+    elif state == "object":
         return isObject(sent)
     else:
         return False
@@ -25,43 +39,33 @@ def parse(sent):
 """Returns whether word is a subject
 Precondition: word is a string"""
 def isSubject(word):
-    print("subject")
-    f = open("sentence_part.txt",'w')
-    subjects = [u'我',u'你'u'他']
+    print('subject')
+    print("in sub?",subjects)
     if word in subjects:
-        f.write("verb")
-        f.close()
+        update_start("verb")
         return True
     else:
-        f.write("start")
-        f.close()
+        update_start("start")
         return False
 
 """Returns whether word is a verb
 Precondition: word is a string"""
 def isVerb(word):
-    f = open("sentence_part.txt",'w')
-    verbs = [u'爱', u'恨']
+    print('isVerb')
     if word in verbs:
-        f.write("object")
-        f.close()
+        update_start("object")
         return True
     else:
-        f.write("start")
-        f.close()
+        update_start("start")
         return False
 
 """Returns whether word is an object
 Precondition: word is a string"""
 def isObject(word):
-    f = open("sentence_part.txt",'w')
-    objects = [u'狗',u'猫']
-    print("in objects, word- "+word)
+    print('object')
     if word in objects:
-        f.write("subject")
-        f.close()
+        update_start("start")
         return True
     else:
-        f.write("start")
-        f.close()
+        update_start("start")
         return False

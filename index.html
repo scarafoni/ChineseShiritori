@@ -30,7 +30,6 @@
             <div class="inner">
                 <div>
                     <h1 class="masthead-brand">Shiritori</h1>
-                    <p class="pos_right"><input id="submitText" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button></p>
                 </div>
                 <div class="box">
                     <div id="submit_text">
@@ -51,9 +50,9 @@
     </div>
 
 <script type="text/javascript">
+//starting state
 $("#submitText").click(viewText);
 function viewText () {
-    //alert('viewText');
     // Find html elements.
     var textArea = $("#my_text").val() + " ";
     var div = $("#view_text");
