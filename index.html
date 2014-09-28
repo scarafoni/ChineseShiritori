@@ -14,7 +14,7 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
-    <script type="text/javascript">pico.load("parser");</script>
+    <script type="text/javascript">pico.load("parser_cn");</script>
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -41,9 +41,9 @@
                 <br>
 
                 <!-- Submit Button -->
-                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="view_text()">
+                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit">
                 <br>
-                <input id="submitText" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button>
+                <input id="startTJS" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button>
             </div>
         </div>
     </div>
@@ -51,6 +51,7 @@
 <script type="text/javascript">
 $("#submitText").click(viewText);
 function viewText () {
+    //alert('viewText');
     // Find html elements.
     var textArea = $("#my_text").val() + " ";
     var div = $("#view_text");

@@ -1,42 +1,67 @@
 # -*- coding: utf-8 -*-
-import pico
 
+import pico
+    
 def parse_text_res(sent):
     return str(parse(sent))
 
 """Parses a sentence sent to determine whether it is a valid sentence
 Precondition: sent is a string"""
 def parse(sent):
+    f = open("sentence_part.txt",'r')
+    last_part = f.readline().strip()
+    f.close()
+    print(last_part)
     sent = sent.strip()
-    words = sent.split()
-    print words
-    if len(words) == 1:
-        return isSubject(words[0])
-    if len(words) == 2:
-        return isSubject(words[0]) and isVerb(words[1])
+    if last_part in ["start","subject"]:
+        return isSubject(sent)
+    elif last_part == "verb":
+        return isVerb(sent)
+    elif last_part == "object":
+        return isObject(sent)
     else:
-        return isSubject(words[0]) and isVerb(words[1]) and isObject(words[2])
+        return False
 
 """Returns whether word is a subject
 Precondition: word is a string"""
 def isSubject(word):
-    lword = word.lower()
+    print("subject")
+    f = open("sentence_part.txt",'w')
     subjects = [u'我',u'你'u'他']
-    return lword in subject
+    if word in subjects:
+        f.write("verb")
+        f.close()
+        return True
+    else:
+        f.write("start")
+        f.close()
+        return False
 
 """Returns whether word is a verb
 Precondition: word is a string"""
 def isVerb(word):
-    lword = word.lower()
+    f = open("sentence_part.txt",'w')
     verbs = [u'爱', u'恨']
-    return lword in verbs
+    if word in verbs:
+        f.write("object")
+        f.close()
+        return True
+    else:
+        f.write("start")
+        f.close()
+        return False
 
 """Returns whether word is an object
 Precondition: word is a string"""
 def isObject(word):
-    lword = word.lower()
+    f = open("sentence_part.txt",'w')
     objects = [u'狗',u'猫']
-    return lword in objects
-
-if __name__ == "__main__":
-    main()
+    print("in objects, word- "+word)
+    if word in objects:
+        f.write("subject")
+        f.close()
+        return True
+    else:
+        f.write("start")
+        f.close()
+        return False
