@@ -38,13 +38,13 @@ class Shiritori(object):
         self.p1 = not self.p1
         
     def translate(self, word):
-        translated = self.translator.translate(word, "zh-TW")
+        translated = self.translator.translate(word, "en")
         print translated
         return translated
 
     def is_node(self, word):
         tag = nltk.pos_tag([word])[0][1][0]
-        if (tag in valid_tags):
+        if (tag in self.valid_tags):
             return True
         else:
             return False
