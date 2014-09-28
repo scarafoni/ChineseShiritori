@@ -25,6 +25,7 @@ def update_start(text):
 """Parses a sentence sent to determine whether it is a valid sentence
 Precondition: sent is a string"""
 def parse(sent):
+    sent = sent.strip()
     state = read_start()
     print("state- ",state)
     if state in ["start","subject"]:
@@ -40,7 +41,7 @@ def parse(sent):
 Precondition: word is a string"""
 def isSubject(word):
     print('subject')
-    print("in sub?",subjects)
+    print("in sub?",word in subjects)
     if word in subjects:
         update_start("verb")
         return True
