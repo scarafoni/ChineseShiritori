@@ -17,7 +17,7 @@ def parse_text_res(sent):
 
 def read_start():
     f = open("sentence_part.txt",'r')
-    x = f.readline().strip()
+    x = f.readline().strip().split(",")
     f.close()
     return x
     
@@ -32,6 +32,7 @@ def parse(sent):
     sent = sent.strip()
     state = read_start()
     print("state- ",state)
+    print("sent- ",sent)
     if state in ["start","subject"]:
         return isSubject(sent)
     elif state == "verb":
@@ -47,10 +48,7 @@ def isSubject(word):
     print('subject')
     print("in sub?",word in subjects)
     if word in subjects:
-        update_start("verb")
-        return True
-    elif word in joiners:
-        update_start("subject")
+        update_start("verb,joiner")
         return True
     else:
         update_start("start")

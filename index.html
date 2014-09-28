@@ -72,10 +72,11 @@ function viewText () {
     var displayMessage = function(message){
         document.getElementById('message').innerHTML = message;
         if(message == "False"){
+            div.val("");
             alert("game over");
         }
     }
-    parser_cn.parse_text_res(textArea, displayMessage);
+    parser_cn.parse_text_res(div.val(), displayMessage);
 }
 
 
