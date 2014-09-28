@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pico
+import nltk
     
 subjects = [u'我',u'你'u'他']
 joiners = [u'很']
@@ -9,6 +10,14 @@ objects = [u'狗',u'猫']
 
 state = ""
 
+def parse_text_res(phrase):
+    if len(phrase) == 0:
+        False
+    s = S(phrase)
+    v = V(s)
+   
+    
+'''
 def reset():
     update_start("start")
 
@@ -75,3 +84,4 @@ def isObject(word):
     else:
         update_start("start")
         return False
+'''
