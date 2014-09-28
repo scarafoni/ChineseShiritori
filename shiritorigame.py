@@ -24,7 +24,7 @@ class Shiritori(object):
         self.p2score = 0
         self.p1 = True
         self.BASE_POINTS = 100
-        self.valid_tags = ['N']
+        self.valid_tags = ['N','J','V']
         self.rh = rhine.Rhine('sdf0b913e4b07b5243b7f527')
         self.translator = goslate.Goslate()
 
