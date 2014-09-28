@@ -43,7 +43,7 @@
                 <br>
 
                 <!-- Submit Button -->
-                <input id="submitText" a="" class="btn btn-lg btn-primary" role="button" type="button" value="Submit" onclick="viewText()">
+                <input id="submitText" a="" class="btn btn-lg btn-primary" role="button" type="button" value="Submit">
 
                 <input id="resetText" a="" class="btn btn-lg btn-warning" role="button" type="button" value="Reset" onclick="resetText()">
                 
@@ -72,7 +72,7 @@ function viewText () {
     var displayMessage = function(message){
         document.getElementById('message').innerHTML = message;
         if(message == "False"){
-            div.val("");
+            $("#view_text").val("");
             alert("game over");
         }
     }
