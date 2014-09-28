@@ -7,7 +7,7 @@ class Shiritori(object):
     """Instance of game. As words are added to the sentence, the score gets
     incremented. Score for new word depends on how much it relates to other
     words in the sentence. Only relevant words are selected. Articles have no
-    effect on score. Repeated words are worth nothing.
+    effect on score.
     
     Fields:
         nodes[Node list]: List of current relevant words
@@ -20,8 +20,7 @@ class Shiritori(object):
         as the game goes on.
         valid_tags [string list]: List of tags that indicate word should be a node
         rh [Rhine]: Instance of rhine to determine distance between words
-        translator [Goslate]: Translator used for Chinese to English
-        used_words [string list]: List of words that have been used"""
+        translator [Goslate]: Translator used for Chinese to English"""
     def __init__(self):
         self.nodes = []
         self.p1score = 0
@@ -32,7 +31,6 @@ class Shiritori(object):
         self.valid_tags = ['N','J','V']
         self.rh = rhine.Rhine('sdf0b913e4b07b5243b7f527')
         self.translator = goslate.Goslate()
-        self.used_words = []
 
     """Takes in a word submission and updates the game
     Precondition: word is a string"""
