@@ -3,10 +3,14 @@
 import pico
     
 subjects = [u'我',u'你'u'他']
+joiners = [u'很']
 verbs = [u'爱', u'恨']
 objects = [u'狗',u'猫']
 
 state = ""
+
+def reset():
+    update_start("start")
 
 def parse_text_res(sent):
     return str(parse(sent))
@@ -44,6 +48,9 @@ def isSubject(word):
     print("in sub?",word in subjects)
     if word in subjects:
         update_start("verb")
+        return True
+    else if word in joiners:
+        update_start("subject"
         return True
     else:
         update_start("start")

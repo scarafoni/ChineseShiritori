@@ -48,7 +48,6 @@
     </div>
 
 <script type="text/javascript">
-//starting state
 $("#submitText").click(viewText);
 
 $('#my_text').keydown(function (e){
@@ -65,8 +64,11 @@ function viewText () {
     div.append(textArea);
     $("#my_text").val(" ");
     var displayMessage = function(message){
-               document.getElementById('message').innerHTML = message;
-           }
+        document.getElementById('message').innerHTML = message;
+        if(message == False){
+            alert("game over");
+        }
+    }
     parser_cn.parse_text_res(textArea, displayMessage);
 }
 
