@@ -64,7 +64,7 @@ $('#my_text').keydown(function (e){
 
 function viewText () {
     // Find html elements.
-    var textArea = $("#my_text").val() + " ";
+    var textArea = $("#my_text").val();
     var div = $("#view_text");
     // Print the text in the div made for it.
     div.append(textArea);
@@ -76,7 +76,8 @@ function viewText () {
             alert("game over");
         }
     }
-    parser_cn.parse_text_res(div.val(), displayMessage);
+    var sentence = [];
+    parser_cn.parse_text_res(div.text(), displayMessage);
 }
 
 
