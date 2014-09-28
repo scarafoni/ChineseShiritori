@@ -14,7 +14,7 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
     <script type="text/javascript" src="/pico/client.js"></script>
-    <script type="text/javascript">pico.load("parser");</script>
+    <script type="text/javascript">pico.load("parser_cn");</script>
     <link href="http://csug.rochester.edu/u/dscarafo/ChineseShiritori/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -42,9 +42,10 @@
                 <br>
 
                 <!-- Submit Button -->
-                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit" onclick="viewText()">
+                <input id="submitText" a="" class="btn btn-lg btn-success" role="button" type="button" value="Submit">
                 <br>
-                
+                <input id="startTJS" a class="btn btn btn-primary" role="button" type="button" value="Start TogetherJS" onclick="TogetherJS(this); return false;"></button>
+                <br>
             </div>
         </div>
     </div>
@@ -59,6 +60,7 @@ $('#my_text').keydown(function (e){
 })
 
 function viewText () {
+    //alert('viewText');
     // Find html elements.
     var textArea = $("#my_text").val() + " ";
     var div = $("#view_text");
