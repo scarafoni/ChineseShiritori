@@ -6,7 +6,7 @@ class Shiritori(object):
     """Instance of game. As words are added to the sentence, the score gets
     incremented. Score for new word depends on how much it relates to other
     words in the sentence. Only relevant words are selected. Articles have no
-    effect on score.
+    effect on score. Repeated words are worth nothing.
     
     Fields:
         nodes[Node list]: List of current relevant words
@@ -17,7 +17,8 @@ class Shiritori(object):
         from to determine how many points that word is worth
         valid_tags [string list]: List of tags that indicate word should be a node
         rh [Rhine]: Instance of rhine to determine distance between words
-        translator [Goslate]: Translator used for Chinese to English"""
+        translator [Goslate]: Translator used for Chinese to English
+        used_words [string list]: List of words that have been used"""
     def __init__(self):
         self.nodes = []
         self.p1score = 0
@@ -27,14 +28,16 @@ class Shiritori(object):
         self.valid_tags = ['N','J','V']
         self.rh = rhine.Rhine('sdf0b913e4b07b5243b7f527')
         self.translator = goslate.Goslate()
+        self.used_words = []
 
     def play(self, word):
-        trans_word = self.translate(word)
-        if self.is_node(trans_word):
-        #if True:
-            new_node = self.create_node(trans_word)
-            self.update_score(new_node)
-            self.nodes.append(new_node)
+        if word not in self.used_words:
+            trans_word = self.translate(word)
+            if self.is_node(trans_word):
+                self.used_words.append(word)
+                new_node = self.create_node(trans_word)
+                self.update_score(new_node)
+                self.nodes.append(new_node)
         self.p1 = not self.p1
         
     def translate(self, word):
