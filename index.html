@@ -49,7 +49,7 @@
     </div>
 
 <script type="text/javascript">
-$("#submitText").click(viewText);
+//$("#submitText").click(viewText);
 
 $('#my_text').keydown(function (e){
     if(e.keyCode == 13){
@@ -66,7 +66,7 @@ function viewText () {
     $("#my_text").val(" ");
     var displayMessage = function(message){
         document.getElementById('message').innerHTML = message;
-        if(message == False){
+        if(message == "False"){
             alert("game over");
         }
     }

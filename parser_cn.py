@@ -49,8 +49,8 @@ def isSubject(word):
     if word in subjects:
         update_start("verb")
         return True
-    else if word in joiners:
-        update_start("subject"
+    elif word in joiners:
+        update_start("subject")
         return True
     else:
         update_start("start")
