@@ -181,6 +181,14 @@ h2.subhead{
   color:white;
 }
 
+#playerOne{
+  font-size:45px;
+}
+
+#playerTwo{
+  font-size: 45px;
+}
+
 
 .holder{
   position: relative;
@@ -189,9 +197,6 @@ h2.subhead{
   height:1020px;
 }
 
-p.pos_right{
-    position: fixed;
-}
 /*
  * Affix and center
  */
